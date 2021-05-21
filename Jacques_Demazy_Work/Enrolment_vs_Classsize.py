@@ -60,3 +60,35 @@ plt.scatter(tot_enrolments, classsize2007_2019)
 plt.xlim(0.825,1)
 plt.ylim(0.97,1.001)
 plt.savefig("enrolments_vs_classzie_normalized.png")
+
+ 
+#compute Pearson Correlation betweem two sets of data
+
+#compute sample means 
+classsize2007_2019 = classsize2007_2019.squeeze()
+
+x_bar = 0
+for i in classsize2007_2019:
+    x_bar += i
+x_bar = x_bar / classsize2007_2019.size
+
+y_bar = 0
+for i in tot_enrolments:
+    y_bar += i
+y_bar = y_bar / tot_enrolments.size
+
+pearson_correlation = 0
+x_var = 0
+y_var = 0
+
+for i in (0,tot_enrolments.size-1):
+    pearson_correlation += ((classsize2007_2019[i]-x_bar)* (tot_enrolments[i]-y_bar))
+    x_var += (classsize2007_2019[i]-x_bar)**2
+    y_var += (tot_enrolments[i]-y_bar)**2
+
+pearson_correlation = pearson_correlation / (x_var*y_var)**0.5
+
+print(pearson_correlation)
+    
+
+    
