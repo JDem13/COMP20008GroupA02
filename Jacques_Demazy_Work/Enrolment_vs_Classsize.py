@@ -47,6 +47,8 @@ tot_enrolments = pd.Series(tot_enrolments)
 
 #plot enrolments with classsizes
 plt.scatter(tot_enrolments, classsize2007_2019)
+plt.ylabel('Average Classsize 2007-2019')
+plt.xlabel('Total Enrolments 2007-2019')
 plt.savefig("enrolments_vs_classzie.png")
 
 
@@ -57,6 +59,8 @@ tot_enrolments = tot_enrolments / tot_enrolments.max()
 
 #create new normalised plots
 plt.scatter(tot_enrolments, classsize2007_2019)
+plt.ylabel('Average Classsize 2007-2019 normalized')
+plt.xlabel('Total Enrolments 2007-2019 normalized')
 plt.xlim(0.825,1)
 plt.ylim(0.97,1.001)
 plt.savefig("enrolments_vs_classzie_normalized.png")
@@ -88,6 +92,7 @@ for i in (0,tot_enrolments.size-1):
 
 pearson_correlation = pearson_correlation / (x_var*y_var)**0.5
 
+print("Pearson Coefficient is:")
 print(pearson_correlation)
     
 

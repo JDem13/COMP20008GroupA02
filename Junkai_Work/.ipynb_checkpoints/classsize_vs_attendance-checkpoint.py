@@ -46,6 +46,8 @@ df2['Secondary ungraded attendence'] = df2['Secondary ungraded attendence'] / df
 
 #secondary school attendance vs classsize
 plt.scatter(df1['Secondary'], df2['Secondary ungraded attendence'])
+plt.ylabel('Average Attendance')
+plt.xlabel('Average Class size')
 plt.savefig("classsize_vs_attendance.png")
 
 df1.plot()

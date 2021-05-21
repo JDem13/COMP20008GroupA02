@@ -5,3 +5,5 @@ Assignment 2 group for COMP20008 Unimelb semester 1 2021
 Group Members ID'S:
 
 Jacques Demazy : 1080167
+Jericho: 1074469
+Kah: 980962

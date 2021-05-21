@@ -15,6 +15,7 @@ print(loc_df['LGA_Name'].value_counts().tail(20))
 
 # top 20 and bottom 20locations of land tax
 tax_sorted = tax_df.sort_values('Total proportionate tax', ascending=False)
-tax_sorted[['Municipality', 'Total proportionate tax']].drop(tax_sorted.index[[0,1]]).head(20)
-tax_sorted[['Municipality', 'Total proportionate tax']].tail(20)
+print(tax_sorted[['Municipality', 'Total proportionate tax']].drop(tax_sorted.index[[0,1]]).head(20))
+print(tax_sorted[['Municipality', 'Total proportionate tax']].tail(20))
+
 
