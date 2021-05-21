@@ -40,6 +40,10 @@ satdcepri = pd.Series(atdcepri)
 df1 = pd.DataFrame({'Secondary':ssecodary, 'Primary':sprimary})
 df2 = pd.DataFrame({'Secondary ungraded attendence':satdcesec, 'Primary ungraded attendence':satdcepri})
 
+#normalise data
+df1['Secondary'] = df1['Secondary'] / df1['Secondary'].max()
+df2['Secondary ungraded attendence'] = df2['Secondary ungraded attendence'] / df2['Secondary ungraded attendence'].max()
+
 #secondary school attendance vs classsize
 plt.scatter(df1['Secondary'], df2['Secondary ungraded attendence'])
 plt.savefig("classsize_vs_attendance.png")
